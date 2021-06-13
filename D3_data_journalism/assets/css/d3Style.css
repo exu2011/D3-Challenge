@@ -28,10 +28,11 @@
   font-family: sans-serif;
   fill: #fff;
   text-anchor: middle;
+  font-size: 12px;
 }
 
 .stateCircle {
-  fill: #89bdd3;
+  fill: #227da0;
   stroke: #e3e3e3;
 }
 
