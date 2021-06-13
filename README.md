@@ -16,73 +16,66 @@ Create and situate your axes and labels to the left and bottom of the chart.
 Note: You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser.
 
 1.  Data Exploration 
- data.CSV file shows that Data has the following columns:  id, state, abbr, poverty, income, healthcare, smokes, obesity etc.
+data.CSV file shows that Data has the following columns:  id, state, abbr, poverty, income, healthcare, smokes, obesity etc.
 Once read by d3.csv then it is like an array of 20 objects as key-value pair format so I will need to use foreach or arrow functions to get arrays
 console.log(Data) see below after d3.csv
 
 2.  Define Function xScale and yScale
-// function used for updating x-scale var upon click on axis label
-// scaling function: https://www.d3indepth.com/scales/
+I defined function used for updating x-scale var upon click on axis label
+scaling function: https://www.d3indepth.com/scales/
 
- // create scales
-  // function used for updating xAxis var upon click on axis label
+create scales function used for updating xAxis var upon click on axis label function used for updating circles group with a transition to new circles
+as compared to renderCircles, the attr iterator needs to match what is created initially
+So above I use "cx" and below I use "x" -  this needs to match the attr on line 245
+text is positioned by x,y attributes, circles are positioned by cx, cy attributes function used for updating circles group with new tooltip
+Below circlesGroup is having the tooltip added but other elements could also have the tool tip added
 
-  // function used for updating circles group with a transition to
-  // new circles
+I also added onmouseout event
 
- as compared to renderCircles, the attr iterator needs to match what is created initially
-  // So above I use "cx" and below I use "x" -  this needs to match the attr on line 245
-  // text is positioned by x,y attributes, circles are positioned by cx, cy attributes
-
-  // function used for updating circles group with new tooltip
-  //Note:  Below circlesGroup is having the tooltip added but other elements could also have the tool tip added
-
-        // onmouseout event
 3.  SVG Setup 
-// xScale uses width so xScale() can only be called below this point
-// Create an SVG wrapper, append an SVG group that will hold our chart,
-// and shift the latter by left and top margins.
-// Append an SVG group
+I set up SVG using d3.select to add into div id=scatter in html. xScale uses width so xScale() can only be called below this point
+Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
+then I append an SVG group
 
 4.  BRING in Data and ADD Structure 
 
-// Initial Params - includes any axis selection that has multiple options
-// Retrieve data from the CSV file and execute everything below
-  // parse data - set values to numerical data types
+Initial Params - includes any axis selection that has multiple options
+Retrieve data from the CSV file and execute everything below
+parse data - set values to numerical data types
 
-    // xLinearScale function above csv import; Note:  xLinearScale is functioncontains scaled data specific to the defined axis
-  // Important note:  xScale uses width that is defined above; xScale can only be called below width in the code
-  // scaling function: https://www.d3indepth.com/scales/
-   // Create y scale function
-     // Create initial axis functions; generates the scaled axis
-       // append x axis; adds x axis chart data tick marks to chartgroup
-  // for future axis value changes then the renderAxes() function needs called
-    // append y axis
-    provide data first to grouped elements 
-    now I am adding the 'circles' with one circle for each data
-  // note that the attributes are "cx" and "cy"; the data is being scaled by the scaling functions defined above; see it is a function
-  // the centers of the circles are also coming from the specific x data group 'chosenXAxis'
-  // append initial circles
-  I wanted to add text to the circles - probably several ways of doing this but here is one.
-  // data is bound to ciclesGroupAll like above and now I add a text element at "x" and "y", not the difference from above.
-  // added round function to make the numbers in the cirlces have no decimals; this is a random data selection; I just wanted something inside the circles. If you want to see why these values are like they are then you need to back-calculate what xScale and transpose is doing
+xLinearScale function above csv import; Note:  xLinearScale is functioncontains scaled data specific to the defined axis
+Important note:  xScale uses width that is defined above; xScale can only be called below width in the code
+scaling function: https://www.d3indepth.com/scales/
+Create y scale function
+Create initial axis functions; generates the scaled axis
+append x axis; adds x axis chart data tick marks to chartgroup
+for future axis value changes then the renderAxes() function needs called
+append y axis
+provide data first to grouped elements 
+now I am adding the 'circles' with one circle for each data
+note that the attributes are "cx" and "cy"; the data is being scaled by the scaling functions defined above; see it is a function
+the centers of the circles are also coming from the specific x data group 'chosenXAxis'
+append initial circles
+I wanted to add text to the circles - probably several ways of doing this but here is one.
+data is bound to ciclesGroupAll like above and now I add a text element at "x" and "y", not the difference from above.
+added round function to make the numbers in the cirlces have no decimals; this is a random data selection; I just wanted something inside the circles. If you want to see why these values are like they are then you need to back-calculate what xScale and transpose is doing
 
-   // Create group for two x-axis labels
-   // create Y-axislabel group
-   // updateToolTip function above csv import
+Create group for two x-axis labels
+create Y-axislabel group
+updateToolTip function above csv import
   
   5.  ADD updates upon clicking axis text  
-  // x axis labels event listener
-  // if you comment out the entire labelsGroup section then you can see that the plot populates but does not update when selecting the axis
-  // note that above this section, only the updateToolTip and xScale functions are called of all the user created functions at the top of the script
-  // the other functions at the top of the page are used to re-define the data applied to the xLinearScale function, xAxis object, circlesGroup elements, textcirclesGroup elements, circlesGroup elements
-         // functions here found above csv import
-        // updates x scale for new data
-                // updates x axis with transition
-                  // updates circles with new x values
-                   // New - updates text labels within circles
-                        // changes classes to change bold text
-                            // create yLabelGroup listener
-                            // get value of selection
-                                    // replaces chosenXAxis with value
+  x axis labels event listener
+  if you comment out the entire labelsGroup section then you can see that the plot populates but does not update when selecting the axis
+  note that above this section, only the updateToolTip and xScale functions are called of all the user created functions at the top of the script
+  the other functions at the top of the page are used to re-define the data applied to the xLinearScale function, xAxis object, circlesGroup elements, textcirclesGroup elements, circlesGroup elements
+  functions here found above csv import
+  updates x scale for new data
+  updates x axis with transition
+  updates circles with new x values
+  New - updates text labels within circles
+  changes classes to change bold text
+  create yLabelGroup listener
+  get value of selection
+  replaces chosenXAxis with value
       // updates x axis with transition
