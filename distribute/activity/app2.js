@@ -1,3 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // I worked with Erin Wills (TA) and the following people:  ______________
 // Remember to comment your code as we discuss it.  Commenting the code is required.
 // Prior to starting, make sure  you have already created and cloned your repo.
@@ -356,7 +479,18 @@ d3.csv("Data.csv").then(function(Data, err) {
             .classed("active", true)
             .classed("inactive", false);
         }
-        else{
+        else if (chosenXAxis === "age"){
+          ageLabel
+            .classed("active", false)
+            .classed("inactive", true);
+          povertyLabel
+            .classed("active", false)
+            .classed("inactive", true);
+          incomeLabel
+            .classed("active", true)
+            .classed("inactive", false);
+        }
+        else {
           console.log("it didn't work")
         }
       }
