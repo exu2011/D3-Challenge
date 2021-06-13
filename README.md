@@ -14,3 +14,28 @@ Create and situate your axes and labels to the left and bottom of the chart.
 
 
 Note: You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser.
+
+1.  Data Exploration 
+ data.CSV file shows that Data has following columns:  rockband, hair_length, num_hits, num_albums
+Once read by d3.csv then it is like an array of 20 objects as key-value pair format so I will need to use foreach or arrow functions to get arrays
+console.log(Data) see below after d3.csv
+
+2.  Define Function 
+// function used for updating x-scale var upon click on axis label
+// scaling function: https://www.d3indepth.com/scales/
+
+ // create scales
+  // function used for updating xAxis var upon click on axis label
+
+  // function used for updating circles group with a transition to
+  // new circles
+
+ as compared to renderCircles, the attr iterator needs to match what is created initially
+  // So above I use "cx" and below I use "x" -  this needs to match the attr on line 245
+  // text is positioned by x,y attributes, circles are positioned by cx, cy attributes
+
+  // function used for updating circles group with new tooltip
+  //Note:  Below circlesGroup is having the tooltip added but other elements could also have the tool tip added
+
+        // onmouseout event
+3.  SVG Setup 
