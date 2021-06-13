@@ -39,3 +39,23 @@ console.log(Data) see below after d3.csv
 
         // onmouseout event
 3.  SVG Setup 
+// xScale uses width so xScale() can only be called below this point
+// Create an SVG wrapper, append an SVG group that will hold our chart,
+// and shift the latter by left and top margins.
+// Append an SVG group
+
+4.  BRING in Data and ADD Structure 
+
+// Initial Params - includes any axis selection that has multiple options
+// Retrieve data from the CSV file and execute everything below
+  // parse data - set values to numerical data types
+
+    // xLinearScale function above csv import; Note:  xLinearScale is functioncontains scaled data specific to the defined axis
+  // Important note:  xScale uses width that is defined above; xScale can only be called below width in the code
+  // scaling function: https://www.d3indepth.com/scales/
+   // Create y scale function
+     // Create initial axis functions; generates the scaled axis
+       // append x axis; adds x axis chart data tick marks to chartgroup
+  // for future axis value changes then the renderAxes() function needs called
+    // append y axis
+    provide data first to grouped elements 
