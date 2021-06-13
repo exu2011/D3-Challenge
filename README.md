@@ -59,3 +59,20 @@ console.log(Data) see below after d3.csv
   // for future axis value changes then the renderAxes() function needs called
     // append y axis
     provide data first to grouped elements 
+    now I am adding the 'circles' with one circle for each data
+  // note that the attributes are "cx" and "cy"; the data is being scaled by the scaling functions defined above; see it is a function
+  // the centers of the circles are also coming from the specific x data group 'chosenXAxis'
+  // append initial circles
+  I wanted to add text to the circles - probably several ways of doing this but here is one.
+  // data is bound to ciclesGroupAll like above and now I add a text element at "x" and "y", not the difference from above.
+  // added round function to make the numbers in the cirlces have no decimals; this is a random data selection; I just wanted something inside the circles. If you want to see why these values are like they are then you need to back-calculate what xScale and transpose is doing
+
+   // Create group for two x-axis labels
+   // create Y-axislabel group
+   // updateToolTip function above csv import
+  
+  5.  ADD updates upon clicking axis text  
+  // x axis labels event listener
+  // if you comment out the entire labelsGroup section then you can see that the plot populates but does not update when selecting the axis
+  // note that above this section, only the updateToolTip and xScale functions are called of all the user created functions at the top of the script
+  // the other functions at the top of the page are used to re-define the data applied to the xLinearScale function, xAxis object, circlesGroup elements, textcirclesGroup elements, circlesGroup elements

@@ -114,7 +114,6 @@ function yScale(data, chosenYAxis){
     return circlesGroup;
   }
   
-  // Added by Erin
   // Note:  as compared to renderCircles, the attr iterator needs to match what is created initially
   // So above I use "cx" and below I use "x" -  this needs to match the attr on line 245
   // text is positioned by x,y attributes, circles are positioned by cx, cy attributes
