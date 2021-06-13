@@ -16,11 +16,11 @@ Create and situate your axes and labels to the left and bottom of the chart.
 Note: You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser.
 
 1.  Data Exploration 
- data.CSV file shows that Data has following columns:  rockband, hair_length, num_hits, num_albums
+ data.CSV file shows that Data has the following columns:  id, state, abbr, poverty, income, healthcare, smokes, obesity etc.
 Once read by d3.csv then it is like an array of 20 objects as key-value pair format so I will need to use foreach or arrow functions to get arrays
 console.log(Data) see below after d3.csv
 
-2.  Define Function 
+2.  Define Function xScale and yScale
 // function used for updating x-scale var upon click on axis label
 // scaling function: https://www.d3indepth.com/scales/
 
@@ -76,3 +76,13 @@ console.log(Data) see below after d3.csv
   // if you comment out the entire labelsGroup section then you can see that the plot populates but does not update when selecting the axis
   // note that above this section, only the updateToolTip and xScale functions are called of all the user created functions at the top of the script
   // the other functions at the top of the page are used to re-define the data applied to the xLinearScale function, xAxis object, circlesGroup elements, textcirclesGroup elements, circlesGroup elements
+         // functions here found above csv import
+        // updates x scale for new data
+                // updates x axis with transition
+                  // updates circles with new x values
+                   // New - updates text labels within circles
+                        // changes classes to change bold text
+                            // create yLabelGroup listener
+                            // get value of selection
+                                    // replaces chosenXAxis with value
+      // updates x axis with transition

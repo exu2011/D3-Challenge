@@ -478,29 +478,29 @@ d3.csv("assets/data/data.csv").then(function(Data, err) {
           healthcareLabel
             .classed("active", true)
             .classed("inactive", false);
-          smokesyLabel
+          smokesLabel
             .classed("active", false)
             .classed("inactive", true);
           obesityLabel
             .classed("active", false)
             .classed("inactive", true);
         }
-        else if  (chosenXAxis === "smokes"){
+        else if  (chosenYAxis === "smokes"){
           healthcareLabel
             .classed("active", false)
             .classed("inactive", true);
-          smokesyLabel
+          smokesLabel
             .classed("active", true)
             .classed("inactive", false);
           obesityLabel
             .classed("active", false)
             .classed("inactive", true);
         }
-        else if (chosenXAxis === "obesity"){
+        else if (chosenYAxis === "obesity"){
           healthcareLabel
             .classed("active", false)
             .classed("inactive", true);
-          smokesyLabel
+          smokesLabel
             .classed("active", false)
             .classed("inactive", true);
           obesityLabel
